@@ -1,0 +1,44 @@
+package my_projects;
+
+import java.util.Scanner;
+
+public class Apple {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        ProdutoApple produtoApple = new ProdutoApple();
+
+        System.out.println("Bem vindo a loja virtual da Apple");
+        System.out.println("Nome do produto: " + produtoApple.nome);
+        System.out.println("Valor do produto: " + produtoApple.valor);
+
+        System.out.println();
+
+        System.out.println("Gostaria de comprar esse produto? \n1)Sim \n2)Não \nDigite sua escolha: ");
+        Integer escolhaDeCompra = scanner.nextInt();
+
+
+        if (escolhaDeCompra == 1) {
+            System.out.println("Você gostaria de usar um cupom? \n1)Sim \n2)Não \nDigite sua escolha: ");
+            Integer escolhaDeCupom = scanner.nextInt();
+            if (escolhaDeCupom == 1) {
+                System.out.println("Digite o código do cupom: ");
+                Integer cupomDigitado = scanner.nextInt();
+                if (cupomDigitado == 707) {
+                    System.out.println("Parábens você recebeu um desconto de <30%>");
+                    System.out.println("O valor do produto atualizado ficou: ");
+                } else if (cupomDigitado != 707) {
+                    System.err.println("Cupom Inválido");
+                }
+                else if (escolhaDeCupom == 2) {
+                    System.out.println("Você gostaria de confirmar seu pedido de " + produtoApple.valor);
+                }
+            }
+        }
+
+
+    }
+
+    public static void imprimirLinha() {
+        System.out.println("---------------------------------------------------");
+    }
+}
